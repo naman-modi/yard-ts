@@ -87,7 +87,10 @@ export default class DoublyLinkedList {
     return tempNode!.value;
   }
 
-  deleteFirstOccurence(value: any): boolean {
+  deleteFirstOccurence(
+    value: any,
+    compFunction: (x: any, y: any) => boolean = this._compFunc,
+  ): boolean {
     // if (typeof value === 'undefined') throw new Error('Value must be passed');
     if (this.isEmpty()) return false;
     let prev: DoublyLinkedListNode | null = null;
@@ -114,7 +117,10 @@ export default class DoublyLinkedList {
     return deletedFlag;
   }
 
-  deleteAllOccurences(value: number): number {
+  deleteAllOccurences(
+    value: number,
+    compFunction: (x: any, y: any) => boolean = this._compFunc,
+  ): number {
     // if (typeof value === 'undefined') throw new Error('Value must be passed');
     if (this.isEmpty()) return 0;
     let prev: DoublyLinkedListNode | null = null;

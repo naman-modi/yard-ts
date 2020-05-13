@@ -64,7 +64,10 @@ export default class SinglyLinkedList {
     return;
   }
 
-  deleteFirstOccurence(value: any): boolean {
+  deleteFirstOccurence(
+    value: any,
+    compFunction: (x: any, y: any) => boolean = this._compFunc,
+  ): boolean {
     // if (typeof value === 'undefined') throw new Error('Value must be passed');
     if (this.isEmpty()) return false;
     let prev: SinglyLinkedListNode | null = null;
@@ -89,7 +92,10 @@ export default class SinglyLinkedList {
     return deletedFlag;
   }
 
-  deleteAllOccurences(value: number): number {
+  deleteAllOccurences(
+    value: number,
+    compFunction: (x: any, y: any) => boolean = this._compFunc,
+  ): number {
     // if (typeof value === 'undefined') throw new Error('Value must be passed');
     if (this.isEmpty()) return 0;
     let prev: SinglyLinkedListNode | null = null;
